@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 👈 Hace la página responsive -->
+    <style>
+        /* Fondo animado */
+        .back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            animation: backdiv 3.5s infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Empuja el botón abajo */
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Corazón */
+        .heart {
+            position: relative;
+            background-color: yellow;
+            height: 150px;
+            width: 150px;
+            transform: rotate(-45deg);
+            animation: beat 3.5s infinite;
+            margin-top: 30px;
+        }
+
+        .heart:after, .heart:before {
+            background-color: yellow;
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 80px;
+        }
+
+        .heart:before {
+            top: -80px;
+            left: 0;
+        }
+
+        /* Fondo animado */
+        @keyframes backdiv {
+            50% {
+                background: #87eb7efd;
+            }
+        }
+
+        /* Latido del corazón */
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(0.6) rotate(-45deg);
+            }
+        }
+
+        /* Texto */
+        .bday {
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 
+                        0 6px 6px rgba(0, 0, 0, 0.23);
+            font-size: 1rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            color: #0e2804;
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #aded23;
+            border-radius: 10px;
+            max-width: 90%;
+        }
+
+        /* Botón */
+        .boton button {
+            background: linear-gradient(45deg, #8fd840, #5fb327);
+            display: block;
+            margin: 10px auto;
+            padding: 12px 25px;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .boton button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #5fb327, #3d8e1c);
+        }
+
+        .boton a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Ajustes responsive */
+        @media (max-width: 600px) {
+            .heart {
+                height: 100px;
+                width: 100px;
+            }
+
+            .heart:after, .heart:before {
+                width: 100px;
+                height: 100px;
+            }
+
+            .heart:after {
+                left: 55px;
+            }
+
+            .heart:before {
+                top: -55px;
+            }
+
+            .bday {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .boton button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@600&display=swap" rel="stylesheet">
+
+    <title>Flores Amarillas</title>
+</head>
+<body>
+    <div class="back">
+        <div class="bday">
+            Buen día Mi niña 💛<br>
+            Te envío este pequeño gesto de mi amor hacia ti y mi recuerdo más preciado.<br>
+            Espero que tengas sueños llenos de paz y felicidad. Nunca olvides que este hombre te ama con toda su alma.
+        </div>
+
+        <div class="heart"></div>
+
+        <footer>
+            <div class="boton">
+                <button><a href="index2.html">Haz click aquí</a></button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
